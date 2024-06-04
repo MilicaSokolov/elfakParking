@@ -1,0 +1,39 @@
+<div class="main">
+    <p-toast />
+    <p-confirmDialog />
+    <div class="content">
+        <div class="header">
+            <label style="color: #164D7D;  font-size: 45px; font-weight: bold;">Tvoje rezervacije parking mesta</label>
+        </div>
+        <div class="reservations">
+            <p-scrollPanel [style]="{ width: '50vw', height: '70vh' }" styleClass="p-scrollpanel-bar-y scroll">
+
+                <div *ngFor="let reservation of reservations" class="reservationCard">
+
+                    <p-card>
+                        <div style="display: flex; flex-direction: row;">
+                            <div style="display: flex; flex-direction: column;width: 90%;">
+                                <label
+                                    style="color: #164D7D; font-size: 25px; font-weight: bold; margin-top: -5%; margin-bottom: 5%;">{{reservation.Date}}</label>
+                                <div style="margin-bottom: 2%;"><label>Broj
+                                        parking mesta: </label>
+                                    <label style="color: #164D7D;  font-weight: bold;"> {{reservation.ParkingSpotNum}}
+                                    </label>
+                                </div>
+                                <div>
+                                    <label> Broj registarske
+                                        tablice: </label>
+                                    <label
+                                        style="color: #164D7D;  font-weight: bold;">{{reservation.RegistrationTableNum}}</label>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: flex-end;">
+                                <p-button (click)="confirm($event)" label="Otkazi" icon="pi pi-times"(onClick)="cancelReservation()" />
+                            </div>
+                        </div>
+                    </p-card>
+
+                </div>
+            </p-scrollPanel>
+        </div>
+    </div>

@@ -1,0 +1,23 @@
+<div class="maincontent">
+    <p-toast></p-toast>
+    <div class="login-container">
+        <form [formGroup]="loginForm" (ngSubmit)="prijava(loginForm)" class="form-login">
+            <div class="header">
+                <h1 style="color: white; font-size: 50px;">Prijava</h1>
+            </div>
+            <div>
+                <label for="login-input-user" class="login__label">
+                    Elfak e-mail
+                </label>
+                <input id="login-input-user" class="login__input" type="text" formControlName="email"/>
+                <label for="login-input-password" class="login__label">
+                    Password
+                </label>
+                <input id="login-input-password" class="login__input" type="password" formControlName="password"/>
+
+                <button class="login__submit" type="submit">Prijavi se</button>
+            </div>
+        </form>
+        <a href="https://www.elfak.ni.ac.rs/" class="elfak">Elektronski fakultet u Nišu</a>
+    </div>
+</div>

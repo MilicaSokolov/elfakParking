@@ -1,0 +1,31 @@
+<div class="main">
+    <p-toast></p-toast>
+    <form [formGroup]="parkingInfoForm" (ngSubmit)="book(parkingInfoForm)" class="form-login">
+        <div class="info">
+
+
+            <div class="header">
+                <h1 style="color: white; font-size: 50px;">Rezervacija</h1>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+                <label for="login-input-user" class="login__label">
+                    Registarska tablica
+                </label>
+                <input class="login__input" type="text" placeholder="GG-XXX-YY" formControlName="registrationTableNum" />
+                <label for="login-input-password" class="login__label">
+                    Datum rezervacije
+                </label>
+                <input type="date" class="login__input" placeholder="mm/dd/yyyy" formControlName="bookingDate" />
+
+                <button class="login__submit" type="submit">Rezerviši</button>
+            </div>
+        </div>
+
+        <div class="parking">
+            <div style="margin-top: 1%; margin-left: 1%;">
+                    <p-selectButton [options]="parkingOptions" formControlName="parkingNum" optionLabel="label"
+                        optionValue="value" />
+            </div>
+        </div>
+    </form>
+</div>
